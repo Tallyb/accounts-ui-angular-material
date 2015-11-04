@@ -4,4 +4,4 @@ angular.module ('accounts-ui-angular-material', [
     'ngMaterial'
 ]);
 
-i18n = {};
+

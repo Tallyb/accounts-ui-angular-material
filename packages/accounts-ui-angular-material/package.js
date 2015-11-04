@@ -10,7 +10,7 @@ Package.on_use(function (api) {
 		'accounts-base@1.0.0',
 		'underscore@1.0.0',
 		'anti:i18n@0.4.3',
-		'angualr',
+		'angular',
 		'angular:angular-material'
 		],'client');
 
@@ -23,35 +23,21 @@ Package.on_use(function (api) {
 	// Accounts.oauth.registerService) exists.
 	api.use('accounts-password@1.0.0', {weak: true});
 
-	api.add_files([
+	api.addFiles([
 		'accounts_ui.js',
+		'routes.ng.js',
+		'accounts-ui-angular-material.js',
+		'controllers/login.ng.js',
+		'controllers/register.ng.js',
+		'controllers/reset.ng.js'
 
-		// translations
-		'i18n/en.i18n.js',
-		'i18n/es.i18n.js',
-		'i18n/ca.i18n.js',
-		'i18n/fr.i18n.js',
-		'i18n/de.i18n.js',
-		'i18n/it.i18n.js',
-		'i18n/pt-PT.i18n.js',
-		'i18n/pt-BR.i18n.js',
-		'i18n/pt.i18n.js',
-		'i18n/ru.i18n.js',
-		'i18n/el.i18n.js',
-		'i18n/ko.i18n.js',
-		'i18n/ar.i18n.js',
-		'i18n/pl.i18n.js',
-		'i18n/zh-CN.i18n.js',
-		'i18n/zh-TW.i18n.js',
-		'i18n/zh.i18n.js',
-		'i18n/nl.i18n.js',
-		'i18n/ja.i18n.js',
-		'i18n/he.i18n.js',
-		'i18n.js'
+	], 'client');
 
-		//need to add the local files here
-
-		], 'client');
+	api.addAssets ([
+		'views/login.ng.html',
+		'views/register.ng.html',
+		'views/reset.ng.html'
+	], 'web.browser');
 
 	api.export('accountsUIAngualrMaterial', 'client')
 });
